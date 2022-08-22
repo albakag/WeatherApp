@@ -66,7 +66,7 @@ class MainFragment : Fragment() {
             val minMuxTemp = "${it.maxTemp}'C/${it.minTemp}'C"
             tvDateTime.text = it.currentTime
             tvCondition.text = it.condition
-            tvCurrentTemp.text = it.currentTemp +"'C"
+            tvCurrentTemp.text = it.currentTemp
             tvPlaceInfo.text = it.city
             tvMaxMin.text = minMuxTemp
             Picasso.get().load("Http:" + it.imageUrl).into(ivPictureCard)
@@ -121,7 +121,7 @@ class MainFragment : Fragment() {
         val daysArrayList = mainObject.getJSONObject("forecast").getJSONArray("forecastday")
         val cityName = mainObject.getJSONObject("location").getString("name")
         for (i in 0 until daysArrayList.length()){
-            val day = daysArrayList[i] as JSONObject
+            val day = (daysArrayList[i] as JSONObject)
             val item = WeatherModel(
                 cityName,
                 mainObject.getJSONObject("current").getString("temp_c"),

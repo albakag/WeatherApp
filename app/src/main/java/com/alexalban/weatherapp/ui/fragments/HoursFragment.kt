@@ -34,24 +34,20 @@ class HoursFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rcViewInit()
-
         updateHoursListByLiveData()
     }
 
-    private fun updateHoursListByLiveData() = runBlocking {
-        Log.d("MyLog", "Before getHoursList")
-        launch{
-            delay(2000L)
-            model.currentWeatherModel.observe(viewLifecycleOwner) {
-                adapter.submitList(getHoursList(it))
-            }
+    private fun updateHoursListByLiveData() {
+        model.currentWeatherModel.observe(viewLifecycleOwner) {
+            Log.d("MyLog", "Hours: ${it.hours}")
+//            adapter.submitList(getHoursList(it))
         }
     }
 
     private fun rcViewInit() = with(binding){
-        rcView.layoutManager = LinearLayoutManager(activity)
+        rcViewHours.layoutManager = LinearLayoutManager(activity)
         adapter = WeatherModelAdapter()
-        rcView.adapter = adapter
+        rcViewHours.adapter = adapter
     }
 
     private fun getHoursList(itemWeather: WeatherModel): List<WeatherModel>{
@@ -61,7 +57,7 @@ class HoursFragment : Fragment() {
         Log.d("MyLog", "Into getHoursList")
         for (i in 0 until arrayList.length()){
             val itemHours = WeatherModel(
-                itemWeather.city,
+                "",
                 currentTemp = (arrayList[i] as JSONObject).getString("temp_c"),
                 "",
                 "",
