@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty">EMPTY</string>
+
+    <string-array name="string_fragments_name">
+        <item>HOURS</item>
+        <item>DAYS</item>
+    </string-array>
+</resources>
