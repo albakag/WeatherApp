@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="3dp"
     android:backgroundTint="@color/blue_bg"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="5dp"
     app:cardElevation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,9 +20,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="5dp"
-            android:fontFamily="@font/amarante"
+            android:fontFamily="@font/average_sans"
             android:text="Data 27.07.2022"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/tv_item_condition"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:fontFamily="@font/amarante"
+            android:fontFamily="@font/average_sans"
             android:text="Sunny"
             android:textColor="@color/white"
             android:textSize="16sp"
@@ -53,9 +54,9 @@
             android:id="@+id/tv_temp"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:fontFamily="@font/amarante"
+            android:fontFamily="@font/average_sans"
             android:gravity="center"
-            android:text="30'C"
+            android:text="30°C"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
